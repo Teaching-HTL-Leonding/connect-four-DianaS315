@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 export class Level2Component {
   public currentPlayerIndex = 1;
   public currentWinnerIndex = 0;
-  private playerNames!: string[];
+  public playerNames!: string[];
   public boardContent!: number [][];
 
   constructor() {
@@ -47,7 +47,7 @@ export class Level2Component {
     this.currentWinnerIndex = 0;
   }
 
-  private getWinnerIndex(): number{
+  public getWinnerIndex(): number{
     // checks rows
     for(let row = 0; row < 4; row++){
       const first = this.boardContent[row][0];
