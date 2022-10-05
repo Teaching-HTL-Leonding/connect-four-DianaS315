@@ -21,6 +21,15 @@ export class Level3Component extends Level2Component{
     super();
   }
 
+  override boardContent = [
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+  ]
+  
   public override onRestart(): void {
     this.currentWinnerIndex = 0
     this.currentPlayerIndex = 1
@@ -73,7 +82,7 @@ export class Level3Component extends Level2Component{
   public override getWinnerIndex(): number {
     // checks rows
     for(let row = 0; row < NUM_ROWS; row++){
-      for(let col = 0; col < NUM_COLS - 4; col++){
+      for(let col = 0; col < NUM_COLS - 3; col++){
         let first = this.boardContent[row][col];
         if(first !== 0 &&
           this.boardContent[row][col+1] === first &&

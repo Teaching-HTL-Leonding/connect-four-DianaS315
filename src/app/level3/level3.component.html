@@ -1,12 +1,37 @@
 <h1>Level 3</h1>
 
 
-<table class="connectfour-board">
+<table class="connect-four-board">
   <tbody>
     <tr>
-      <td *ngFor="let column of getCells(); let i = index" class="indicator">
+      <!-- didn't quite work out as planned
+
+        <td *ngFor="let column of getCells(); let i = index" class="indicator">
         <app-column-indicator [columnIndex]="i" (drop)="drop($event)" [playerIndex]="currentPlayerIndex"></app-column-indicator>
+      </td> -->
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="0" (drop)="drop($event)" [playerIndex]="currentPlayerIndex"></app-column-indicator>
       </td>
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="1" (drop)="drop($event)" [playerIndex]="currentPlayerIndex"></app-column-indicator>
+      </td>
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="2" (drop)="drop($event)" [playerIndex]="currentPlayerIndex"></app-column-indicator>
+      </td>
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="3" (drop)="drop($event)" [playerIndex]="currentPlayerIndex"></app-column-indicator>
+      </td>
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="4" (drop)="drop($event)" [playerIndex]="currentPlayerIndex"></app-column-indicator>
+      </td>
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="5" (drop)="drop($event)" [playerIndex]="currentPlayerIndex"></app-column-indicator>
+      </td>
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="6" (drop)="drop($event)" [playerIndex]="currentPlayerIndex"></app-column-indicator>
+      </td>
+
+
           <tr *ngFor="let row of getCells(); let rowIx = index">
       <td *ngFor="let col of row; let colIx = index">
        <div class="coin" [class]="getStyle(colIx, rowIx)"></div>
