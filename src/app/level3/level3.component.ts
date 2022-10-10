@@ -29,7 +29,7 @@ export class Level3Component extends Level2Component{
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
   ]
-  
+
   public override onRestart(): void {
     this.currentWinnerIndex = 0
     this.currentPlayerIndex = 1
