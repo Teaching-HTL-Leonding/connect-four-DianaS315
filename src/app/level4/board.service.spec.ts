@@ -7,8 +7,8 @@ describe('board service', () => {
     board.drop(0);
     board.drop(1);
 
-    expect(board.boardContent[0][5]).toBe(0);
-    expect(board.boardContent[1][5]).toBe(0);
+    expect(board.boardContent[5][0]).toBe(1);
+    expect(board.boardContent[5][1]).toBe(2);
   })
 
   it('can find a winner in a row', () => {

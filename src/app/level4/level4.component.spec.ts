@@ -16,7 +16,7 @@ describe('level 4', () => {
         [0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0],
         [2, 2, 1, 2, 0, 0, 0],
-        [1, 1, 1, 2, 0, 0, 0],
+        [1, 1, 1, 1, 0, 0, 0],
       ]
     }
 
@@ -37,6 +37,5 @@ describe('level 4', () => {
   it('should get correct style', () => {
     expect(component.getStyle(1,5)).toBe('occupied-1');
   })
-
 
 })
