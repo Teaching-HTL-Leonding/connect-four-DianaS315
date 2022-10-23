@@ -1,6 +1,40 @@
 <h1>Level 3</h1>
 
-<!--
-  TODO: Enhance solution from level 2 by using *ngFor
-  NOTE: Your connect-four board should have SEVEN COLUMNS and SIX ROWS!
--->
+
+<table class="connect-four-board">
+  <tbody>
+    <tr>
+
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="0" (drop)="drop($event)" [playerIndex]="currentPlayerIndex"></app-column-indicator>
+      </td>
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="1" (drop)="drop($event)" [playerIndex]="currentPlayerIndex"></app-column-indicator>
+      </td>
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="2" (drop)="drop($event)" [playerIndex]="currentPlayerIndex"></app-column-indicator>
+      </td>
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="3" (drop)="drop($event)" [playerIndex]="currentPlayerIndex"></app-column-indicator>
+      </td>
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="4" (drop)="drop($event)" [playerIndex]="currentPlayerIndex"></app-column-indicator>
+      </td>
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="5" (drop)="drop($event)" [playerIndex]="currentPlayerIndex"></app-column-indicator>
+      </td>
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="6" (drop)="drop($event)" [playerIndex]="currentPlayerIndex"></app-column-indicator>
+      </td>
+          <tr *ngFor="let row of getCells(); let rowIx = index">
+      <td *ngFor="let col of row; let colIx = index">
+       <div class="coin" [class]="getStyle(colIx, rowIx)"></div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h2 [hidden]="winnerIndex === 0">the winner is {{winnerName()}}</h2>
+<br>
+<button (click)="onRestart()">Restart</button>

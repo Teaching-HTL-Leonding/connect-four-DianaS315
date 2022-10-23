@@ -1,5 +1,40 @@
 <h1>Level 4</h1>
 
-<!--
-  TODO: Enhance solution from level 3 by extracting the logic in a separate Angular service.
--->
+
+<table class="connect-four-board">
+  <tbody>
+    <tr>
+
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="0" (drop)="board.drop($event)" [playerIndex]="board.currentPlayerIndex"></app-column-indicator>
+      </td>
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="1" (drop)="board.drop($event)" [playerIndex]="board.currentPlayerIndex"></app-column-indicator>
+      </td>
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="2" (drop)="board.drop($event)" [playerIndex]="board.currentPlayerIndex"></app-column-indicator>
+      </td>
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="3" (drop)="board.drop($event)" [playerIndex]="board.currentPlayerIndex"></app-column-indicator>
+      </td>
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="4" (drop)="board.drop($event)" [playerIndex]="board.currentPlayerIndex"></app-column-indicator>
+      </td>
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="5" (drop)="board.drop($event)" [playerIndex]="board.currentPlayerIndex"></app-column-indicator>
+      </td>
+      <td class="indicator">
+        <app-column-indicator [columnIndex]="6" (drop)="board.drop($event)" [playerIndex]="board.currentPlayerIndex"></app-column-indicator>
+      </td>
+          <tr *ngFor="let row of getCells(); let rowIx = index">
+      <td *ngFor="let col of row; let colIx = index">
+       <div class="coin" [class]="getStyle(colIx, rowIx)"></div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h2 [hidden]="board.winnerIndex === 0">the winner is {{winnerName()}}</h2>
+<br>
+<button (click)="board.onRestart()">Restart</button>
